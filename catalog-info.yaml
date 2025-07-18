@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: node-app-only-trivy
+  description: Node app named node-app-only-trivy
+  annotations:
+    github.com/project-slug: arjun-mindsprint-udemy/node-app-only-trivy
+    backstage.io/techdocs-ref: dir:.
+    jenkins.io/job-full-name: node-app-test-folder/node-app-only-trivy
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental

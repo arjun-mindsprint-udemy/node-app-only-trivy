@@ -1,0 +1,15 @@
+site_name: 'node-app-only-trivy'
+site_description: 'Main documentation for the node-app-only-trivy'
+repo_url: https://github.com/ArjunKumarNair/node-app-only-trivy
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+  - redirects:
+      redirect_maps:
+        'index.md': 'overview/what-is-backstage.md'
+
+# For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
+nav:
+  - Overview:
+      - What is Backstage?: 'docs/index.md'
