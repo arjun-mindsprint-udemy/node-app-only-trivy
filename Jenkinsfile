@@ -153,7 +153,12 @@ pipeline {
                     Write-Host "Health check successful: $($response.Content)"
                 } catch {
                     Write-Host "Health check failed: $($_.Exception.Message)"
+                    if (Get-Process -Id $portForward.Id -ErrorAction SilentlyContinue) {
+                    Write-Host "Stopping port-forward..."
                     Stop-Process -Id $portForward.Id -Force
+                    } else {
+                    Write-Host "Port-forward process already exited."
+                    }
                     exit 1
                 }
 
