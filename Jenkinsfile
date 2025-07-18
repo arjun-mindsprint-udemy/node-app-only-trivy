@@ -34,7 +34,7 @@ pipeline {
 
         stage('SonarQube Scan') {
             when {
-                expression {return env.ENABLE_SONARQUBE}
+                expression {return env.ENABLE_SONARQUBE == 'true'}
             }
             steps {
                 withSonarQubeEnv('SonarQube') {
@@ -74,7 +74,7 @@ pipeline {
 
         stage('Trivy Filesystem Scan') {
             when {
-                expression {return env.ENABLE_TRIVY}
+                expression {return env.ENABLE_TRIVY == 'true'}
             }
             steps {
                 script {
@@ -110,7 +110,7 @@ pipeline {
 
         stage('Trivy Image Scan') {
             when {
-                expression {return env.ENABLE_TRIVY}
+                expression {return env.ENABLE_TRIVY == 'true'}
             }
             steps {
                 script {
@@ -174,7 +174,7 @@ pipeline {
     }
         stage('ZAP DAST Scan') {
             when {
-                expression {return env.ENABLE_ZAP}
+                expression {return env.ENABLE_ZAP == 'true'}
             }
             steps {
                 script {
